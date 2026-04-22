@@ -20,7 +20,7 @@ account={
 
 #store purchases 
 purchase_history=[
-    Purchase("matcha","_____", "7.65")
+    Purchase("matcha","_____", 7.65)
 ]
 
 #define helper functions 
@@ -33,8 +33,7 @@ def calculate_total_spending():
     #update information on the account
     account["total_balance"]= total_cost
 
-    #return total cost 
-    return total_cost 
+
 
 def calculate_utilization_ratio(): 
     return round(account["total_balance"] / account["total_credit"] * 100, 2)
@@ -43,6 +42,9 @@ def calculate_utilization_ratio():
 #adding new purchase 
 def add_new_purchase(purchase_obj):
     purchase_history.append(purchase_obj)
+
+    #call to update total_balance 
+    calculate_total_spending()
 
 
 
@@ -57,5 +59,7 @@ def display_information():
     
 
 #sample run 
+
+calculate_total_spending()
 display_purchases()
-print(calculate_utilization_ratio())
+display_information()
