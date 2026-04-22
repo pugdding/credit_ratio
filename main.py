@@ -15,6 +15,7 @@ account={
     "total_balance":0,
     "total_credit":500,
     "credit_utilization":0,
+    "target_utilization_rate":10,
 }
 
 #store purchases 
@@ -42,3 +43,4 @@ def calculate_utilization_ratio():
 #adding new purchase 
 def add_new_purchase(purchase_obj):
     purchase_history.append(purchase_obj)
+
