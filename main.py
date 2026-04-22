@@ -29,9 +29,14 @@ def calculate_total_spending():
     #loop through purchase array
     for x in purchase_history: 
         total_cost=x.cost
+
     
     #update information on the account
-    account["total_balance"]= total_cost
+    account["total_balance"]+=total_cost
+
+    #display 
+    display_purchases()
+    display_information()
 
 
 
@@ -42,7 +47,6 @@ def calculate_utilization_ratio():
 #adding new purchase 
 def add_new_purchase(purchase_obj):
     purchase_history.append(purchase_obj)
-
     #call to update total_balance 
     calculate_total_spending()
 
@@ -51,10 +55,14 @@ def add_new_purchase(purchase_obj):
 
 #display functions
 def display_purchases(): 
+    print(f"=== PURCHASE INFO =========================================================")
     for x in purchase_history: 
         print(f"{x.name} | ${x.cost}")
 
 def display_information(): 
+    print(f"=== SUMMARY =========================================================")
+    print(f"Total Balance: ${account["total_balance"]}")
+    print(f"Avaliable Balance: ${account["total_credit"] - account["total_balance"]}")
     print(f"Credit Ratio: {calculate_utilization_ratio()}%")
     print(f"Target Ratio: {account["target_utilization_ratio"]}%")
     
@@ -62,6 +70,4 @@ def display_information():
 #sample run 
 calculate_total_spending()
 
-#display functions
-display_purchases()
-display_information()
+add_new_purchase(Purchase("chocolate cake", "a", 5.44))
