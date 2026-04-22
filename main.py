@@ -35,3 +35,5 @@ def calculate_total_spending():
     #return total cost 
     return total_cost 
 
+def calculate_utilization_ratio(): 
+    return (account["total_balance"] / account["total_credit"]) * 100
