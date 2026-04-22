@@ -37,7 +37,7 @@ def calculate_total_spending():
     return total_cost 
 
 def calculate_utilization_ratio(): 
-    return (account["total_balance"] / account["total_credit"]) * 100
+    return round(account["total_balance"] / account["total_credit"] * 100, 2)
 
 
 #adding new purchase 
@@ -51,7 +51,11 @@ def add_new_purchase(purchase_obj):
 def display_purchases(): 
     for x in purchase_history: 
         print(f"{x.name} | ${x.cost}")
+
+def display_information(): 
+    print(f"Credit Ratio: {calculate_utilization_ratio()}%")
     
 
 #sample run 
 display_purchases()
+print(calculate_utilization_ratio())
