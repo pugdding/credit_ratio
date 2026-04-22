@@ -16,3 +16,18 @@ account={
     "total_credit":500,
     "credit_utilization":0,
 }
+
+#store purchases 
+purchase_history=[
+    Purchase("matcha","_____", "7.65"),
+]
+
+#define helper functions 
+def calculate_total_spending(): 
+    total_cost=0
+    for x in purchase_history: 
+        total_cost=x.cost
+    
+    account["total_balance"]= total_cost
+    
+    return total_cost 
