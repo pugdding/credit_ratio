@@ -20,7 +20,7 @@ account={
 
 #store purchases 
 purchase_history=[
-    Purchase("matcha","_____", "7.65"),
+    Purchase("matcha","_____", "7.65")
 ]
 
 #define helper functions 
@@ -44,3 +44,14 @@ def calculate_utilization_ratio():
 def add_new_purchase(purchase_obj):
     purchase_history.append(purchase_obj)
 
+
+
+
+#display functions
+def display_purchases(): 
+    for x in purchase_history: 
+        print(f"{x.name} | ${x.cost}")
+    
+
+#sample run 
+display_purchases()
