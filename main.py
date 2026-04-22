@@ -15,7 +15,7 @@ account={
     "total_balance":0,
     "total_credit":500,
     "credit_utilization":0,
-    "target_utilization_rate":10,
+    "target_utilization_ratio":10,
 }
 
 #store purchases 
@@ -56,10 +56,12 @@ def display_purchases():
 
 def display_information(): 
     print(f"Credit Ratio: {calculate_utilization_ratio()}%")
+    print(f"Target Ratio: {account["target_utilization_ratio"]}%")
     
 
 #sample run 
-
 calculate_total_spending()
+
+#display functions
 display_purchases()
 display_information()
