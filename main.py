@@ -37,3 +37,8 @@ def calculate_total_spending():
 
 def calculate_utilization_ratio(): 
     return (account["total_balance"] / account["total_credit"]) * 100
+
+
+#adding new purchase 
+def add_new_purchase(purchase_obj):
+    purchase_history.append(purchase_obj)
