@@ -37,6 +37,7 @@ def calculate_total_spending():
     #display 
     display_purchases()
     display_information()
+    recommendation()
 
 
 
@@ -65,7 +66,20 @@ def display_information():
     print(f"Avaliable Balance: ${account["total_credit"] - account["total_balance"]}")
     print(f"Credit Ratio: {calculate_utilization_ratio()}%")
     print(f"Target Ratio: {account["target_utilization_ratio"]}%")
-    
+
+def recommendation(): 
+    ratio_difference=account["target_utilization_ratio"] - calculate_utilization_ratio()
+    print("=== RECOMMENDATIONS =========================================================")
+    print(f"Ratio Difference: {ratio_difference}%")
+
+    money_difference=round((ratio_difference/100) * account["total_credit"],2)
+
+    if (ratio_difference > 0): 
+        print(f"Spend ${money_difference} more", end="")
+    elif (ratio_difference < 0): 
+        print("Pay off x", end="")
+
+    print(f" before the closing date to reach the target of {account["target_utilization_ratio"]}%!")
 
 #sample run 
 calculate_total_spending()
