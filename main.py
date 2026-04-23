@@ -1,14 +1,6 @@
 #import module
 from data import Purchase
-
-account={
-    "name": "pudding", 
-    "num_of_credit_card":1, 
-    "total_balance":0,
-    "total_credit":500,
-    "credit_utilization":0,
-    "target_utilization_ratio":10,
-}
+from data import account
 
 #store purchases 
 purchase_history=[
