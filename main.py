@@ -28,7 +28,7 @@ def calculate_total_spending():
     total_cost=0
     #loop through purchase array
     for x in purchase_history: 
-        total_cost=x.cost
+        total_cost+=x.cost
 
     
     #update information on the account
