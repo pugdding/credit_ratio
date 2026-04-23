@@ -1,13 +1,5 @@
-class creditCard: 
-    def __init__(self, current_balance, max_credit): 
-        self.current_balance=current_balance
-        self.max_credit=max_credit 
-    
-class Purchase: 
-    def __init__(self,name,desc,cost): 
-        self.name=name 
-        self.desc=desc
-        self.cost=cost 
+#import module
+from data import Purchase
 
 account={
     "name": "pudding", 
